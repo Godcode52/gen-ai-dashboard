@@ -30,15 +30,29 @@ const querySlice = createSlice({
       state.results = action.payload;
       state.queryHistory = [
         { query: state.currentQuery, timestamp: new Date().toISOString() },
-        ...state.queryHistory.slice(0, 9) // Keep only last 10 queries
+        ...state.queryHistory.slice(0, 9) 
       ];
+      // Save to localStorage
+      localStorage.setItem('queryHistory', JSON.stringify(state.queryHistory));
     },
     queryError: (state, action) => {
       state.isLoading = false;
       state.error = action.payload;
     },
+    clearHistory: (state) => {
+      state.queryHistory = []; 
+      localStorage.removeItem('queryHistory');
+    }
   },
 });
 
-export const { setCurrentQuery, submitQuery, querySuccess, queryError } = querySlice.actions;
+
+export const { 
+  setCurrentQuery, 
+  submitQuery, 
+  querySuccess, 
+  queryError,
+  clearHistory  
+} = querySlice.actions;
+
 export default querySlice.reducer;

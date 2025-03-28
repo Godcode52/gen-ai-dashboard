@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { setCurrentQuery } from '../Redux/querySlice';
+import { setCurrentQuery, clearHistory } from '../Redux/querySlice'; 
 import { FiClock, FiTrash2 } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -11,6 +11,10 @@ const QueryHistory = () => {
     dispatch(setCurrentQuery(query));
   };
 
+  const handleClearHistory = () => {
+    dispatch(clearHistory()); 
+  };
+
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden h-full">
       <div className="p-4 border-b border-gray-200 dark:border-gray-700 flex justify-between items-center">
@@ -19,9 +23,12 @@ const QueryHistory = () => {
           Query History
         </h2>
         {queryHistory.length > 0 && (
-          <button className="text-sm text-red-500 hover:text-red-700 dark:hover:text-red-400 flex items-center transition-colors">
+          <button 
+            onClick={handleClearHistory}
+            className="text-sm text-red-500 hover:text-red-700 dark:hover:text-red-400 flex items-center transition-colors"
+          >
             <FiTrash2 className="mr-1" />
-            Clear
+            Clear All
           </button>
         )}
       </div>

@@ -75,3 +75,8 @@ Submitted By: Kulwant Charan
 Submission Date: 29-03-2025
 
  ### Developed for GrowthGear Frontend Engineering Intern Challenge
+
+ ## Recent Improvements
+- Fixed query history clearance functionality  
+- Added proper localStorage synchronization  
+- Enhanced Redux state consistency
