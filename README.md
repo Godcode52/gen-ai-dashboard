@@ -65,10 +65,10 @@ npm run build
 ```
 
 # Live Demo : 
-View on Vercel
+https://gen-ai-dashboard-alpha.vercel.app/
 
 # Submission Details:
-GitHub Repository: github.com/Godcode52/gen-ai-dashboard
+GitHub Repository: [github.com/Godcode52/gen-ai-dashboard](https://github.com/Godcode52/gen-ai-dashboard)
 
 Submitted By: Kulwant Charan
 
